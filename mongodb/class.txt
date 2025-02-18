@@ -1,0 +1,31 @@
+use school
+
+db.createCollection("students");
+
+db.students.insertOne({name : "Ram Kumar", age : 30})
+
+db.students.insertMany(
+{name : "Monu", age : 55},
+{name : "Sarita Kumari", age : 17},
+{name : "Charu mandhana" , age : 30}
+{name : "Kanchan Kumari", age : 24}
+)
+
+show collections
+
+db.createCollection("library")
+
+db.students.renameCollection("student");
+
+db.help()
+
+db.student.help()
+
+db.student.drop()
+
+db.dropDatabase()
+
+
+
+
+
