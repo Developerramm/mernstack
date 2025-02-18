@@ -1,0 +1,36 @@
+schema Validation
+
+db.createCollection("info",{
+validator : {
+	$jsonSchema :{
+		required : ["name","age"],
+		title : "Student Object Validation",
+		properties : {
+			name : {
+				bsonType : "string",
+				description : "name must be string and required",	
+				},
+			age : {
+				bsonType : "int",
+				minimum : 5,
+				maximum : 50,
+				description : "Age must be integer and required"
+				},
+			course : {
+				bsonType : "string",
+				enum : ["BCA","B.Tech","BSC"],
+				description : "couse must be one of the following value:",
+			},
+			}		
+		}
+	}
+})
+
+db.info.insertOne({name : "Ram Kumar" , age:20, course : "BCA"})
+db.info.insertOne({name : "Ram Kumar" , age:"ABC", course : "BCA"})
+
+db.info.insertOne({name : 123, age : 30, course : "B.Tech"})
+db.info.insertOne({name : "Sarita Kumari", age : 30, course : "B.Tech"})
+
+db.info.insertOne({name : "Charu",age : 36, course : 3243})
+db.info.insertOne({name : "Charu",age : 36, course : "Arts"})
