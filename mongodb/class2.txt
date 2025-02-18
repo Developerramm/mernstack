@@ -1,0 +1,46 @@
+data type in mongodb
+
+string
+double, 32-bit integer
+64-bit integer
+Boolean
+Array
+Object
+NULL
+Regular Express
+TimeStamps
+Date
+ObjectID
+
+db.createCollection("personal");
+
+db.personal.insertOne({
+name : "Ram Kumar",
+age : 25,
+married : false,
+dob : new Date("1995-04-07T00:00:00Z"),
+weight : 63.74,
+kids : null,
+hobbies : ["music","sports","running"],
+address : {
+	street : "209 Maniyari",
+city : "Noida",
+zip : 843302
+},
+})
+
+
+db.personal.insertOne({
+name : "Sarita Kumari",
+age : 27,
+married : true,
+dob : new Date("1995-04-07T00:00:00Z"),
+weight : 55,
+kids : 2,
+hobbies : ["travel","books","cooking"],
+address : {
+	street : "209 Maniyari",
+city : "Noida",
+zip : 843302
+},
+})
