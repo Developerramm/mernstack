@@ -1,0 +1,31 @@
+update command in mongodb
+
+updateOne and updateMany and Replace
+
+db.students.updateOne(
+{name : "Ram Kumar"},
+{$set : {name : "Ramu kumar", age : 25,class : "10th"} }
+)
+
+
+db.students.updateOne(
+{name : "Charu"},
+{$set : {name : "Charu Verma", class : "10th"}}
+)
+
+db.students.updateOne(
+{name : "Ramu Kumar"},
+{$unset : {age : ""}}
+)
+
+db.users.insertMany([
+{name : "Ram Kumar",age : 25, course : "BCA", skills : ["php","java","Python"]},
+{name : "charu verma",age :24, course :"B.Tech", skills : ["javascript","React","Node"]},
+{name : "Sarita",age : 23, course :"Arts",skills : ["mongodb","html","CSS"]},
+])
+
+
+db.users.updateOne(
+{name : "Ram Kumar"},
+{$unset : {age : ""}}
+)

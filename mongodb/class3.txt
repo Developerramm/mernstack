@@ -34,3 +34,4 @@ db.info.insertOne({name : "Sarita Kumari", age : 30, course : "B.Tech"})
 
 db.info.insertOne({name : "Charu",age : 36, course : 3243})
 db.info.insertOne({name : "Charu",age : 36, course : "Arts"})
+
