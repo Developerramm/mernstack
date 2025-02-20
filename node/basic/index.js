@@ -20,3 +20,7 @@ app.post("/api/cars",(req,res)=>{
     console.log(brand);
     res.send("Car submitted successfully");
 })
+
+// db connection
+const dbConnection = require("./config/db");
+dbConnection();
