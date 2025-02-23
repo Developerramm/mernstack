@@ -1,15 +1,37 @@
 import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import AppLayout from "./components/layout/AppLayout";
+import Home from "./components/UI/pages/Home";
+import About from "./components/UI/pages/About";
+import Contact from "./components/UI/pages/Contact";
+import Product from "./components/UI/pages/Product";
 
 const App = () => {
-  return (
-    <div>
-      <h1>React App here </h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut nam odio
-        deleniti aperiam in fugit distinctio quae asperiores qui nesciunt?
-      </p>
-    </div>
-  );
+  const router = createBrowserRouter([
+    {
+      path : "/",
+      element : <AppLayout />,
+      children : [
+        {
+          path : "/",
+          element : <Home />
+        },
+        {
+          path : "/about",
+          element : <About />
+        },
+        {
+          path : "/contact",
+          element : <Contact />
+        },
+        {
+          path : "/product",
+          element : <Product />
+        }
+      ]
+    }
+  ])
+  return <RouterProvider router={router} />;
 };
 
 export default App;
