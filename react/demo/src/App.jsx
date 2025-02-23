@@ -5,6 +5,8 @@ import Home from "./components/UI/pages/Home";
 import About from "./components/UI/pages/About";
 import Contact from "./components/UI/pages/Contact";
 import Product from "./components/UI/pages/Product";
+import Movie from "./components/UI/pages/Movie";
+import GetApiData from "./components/api/GetApiData";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -28,6 +30,11 @@ const App = () => {
           path: "/product",
           element: <Product />,
         },
+        {
+          path : "/movie",
+          element : <Movie />,
+          loader : GetApiData,
+        }
       ],
     },
   ]);

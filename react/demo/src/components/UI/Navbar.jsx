@@ -62,6 +62,16 @@ const Navbar = () => {
                 Product
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
+                to="/movie"
+              >
+                Movie
+              </NavLink>
+            </li>
           </ul>
           <form className="d-flex" role="search">
             <input
