@@ -9,29 +9,33 @@ import Product from "./components/UI/pages/Product";
 const App = () => {
   const router = createBrowserRouter([
     {
-      path : "/",
-      element : <AppLayout />,
-      children : [
+      path: "/",
+      element: <AppLayout />,
+      children: [
         {
-          path : "/",
-          element : <Home />
+          path: "/",
+          element: <Home />,
         },
         {
-          path : "/about",
-          element : <About />
+          path: "/about",
+          element: <About />,
         },
         {
-          path : "/contact",
-          element : <Contact />
+          path: "/contact",
+          element: <Contact />,
         },
         {
-          path : "/product",
-          element : <Product />
-        }
-      ]
-    }
-  ])
-  return <RouterProvider router={router} />;
+          path: "/product",
+          element: <Product />,
+        },
+      ],
+    },
+  ]);
+  return (
+    <div className="container">
+      <RouterProvider router={router} />
+    </div>
+  );
 };
 
 export default App;
