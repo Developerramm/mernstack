@@ -6,7 +6,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
         <NavLink className="navbar-brand" to="/">
-          Home
+          Logo
         </NavLink>
         <button
           className="navbar-toggler"
@@ -22,22 +22,43 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <NavLink className="nav-link active" aria-current="page" to="/">
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
+                aria-current="page"
+                to="/"
+              >
                 Home
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/contact">
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
+                to="/contact"
+              >
                 Contact
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/about">
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
+                to="/about"
+              >
                 About
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/product">
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
+                to="/product"
+              >
                 Product
               </NavLink>
             </li>
