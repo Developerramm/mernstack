@@ -1,24 +1,36 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { getData } from "./api/PostApi";
 
 const App = () => {
+  const [data, setData] = useState([]);
 
-  const [data,setData] = useEffect();
-
-  const getPostData = async()=>{
+  const getPostData = async () => {
     const res = await getData();
-    console.log(res.data)
-    // setData(res.data);
-  }
+    // console.log(res.data);
+    setData(res.data);
+    console.log(data);
+  };
 
-  useEffect(()=>{
+  useEffect(() => {
     getPostData();
-  },[])
+  });
 
+  if(data.length == 0) return "Loading.....";
 
   return (
     <div className="container">
-      <h1 className="text-center">Crud operation here  </h1>
+      <h2 className="text-center">Fetch data using axios </h2>
+      <div className="row mt-3">
+        {data &&
+          data.map((item, index) => {
+            return (
+              <div className="col-md-4 border" key={index}>
+                <h4> {item.title} </h4>
+                <p> {item.body} </p>
+              </div>
+            );
+          })}
+      </div>
     </div>
   );
 };
